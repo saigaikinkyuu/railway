@@ -98,16 +98,26 @@ button.btn {
         car5.innerHTML = num;
       }
       }else{
-        if (car5_text != ""){
+        if (car5_text === ""){
+          if(car4_text === ""){
+            if(car3_text === ""){
+              if(car2_text === ""){
+                if(car1_text === ""){
+                  //
+                }else{
+                  car1.innerHTML = "";
+                }
+              }else{
+                car2.innerHTML = "";
+              }
+            }else{
+              car3.innerHTML = "";
+            }
+          }else{
+            car4.innerHTML = "";
+          }
+      }else{
         car5.innerHTML = "";
-      }else if (car4_text != ""){
-        car1.innerHTML = "";
-      }else if (car3_text != ""){
-        car2.innerHTML = "";
-      }else if (car2_text != ""){
-        car3.innerHTML = "";
-      }else if (car1_text != ""){
-        car4.innerHTML = "";
       }
       }
     }
