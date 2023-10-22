@@ -80,7 +80,7 @@ button.btn {
       var car3_text = car3.textContent;
       var car4_text = car4.textContent;
       var car5_text = car5.textContent;
-      if(!num === 10){
+      if(num != 10){
       if (car1_text === ""){
         car1.innerHTML = num;
       }else if (car2_text === ""){
@@ -94,15 +94,15 @@ button.btn {
       }
       }
       if (num === 10){
-        if (!car5_text === ""){
+        if (car5_text != ""){
         car5.innerHTML = "";
-      }else if (!car4_text === ""){
+      }else if (car4_text != ""){
         car1.innerHTML = "";
-      }else if (!car3_text === ""){
+      }else if (car3_text != ""){
         car2.innerHTML = "";
-      }else if (!car2_text === ""){
+      }else if (car2_text != ""){
         car3.innerHTML = "";
-      }else if (!car1_text === ""){
+      }else if (car1_text != ""){
         car4.innerHTML = "";
       }
       }
