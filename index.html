@@ -80,6 +80,7 @@ button.btn {
       var car3_text = car3.textContent;
       var car4_text = car4.textContent;
       var car5_text = car5.textContent;
+      if(!num === 10){
       if (car1_text === ""){
         car1.innerHTML = num;
       }else if (car2_text === ""){
@@ -90,6 +91,7 @@ button.btn {
         car4.innerHTML = num;
       }else if (car5_text === ""){
         car5.innerHTML = num;
+      }
       }
       if (num === 10){
         if (!car5_text === ""){
