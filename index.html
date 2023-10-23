@@ -75,6 +75,7 @@ button.btn {
   <p id="car_num_3" style="font-size: 30px;"></p>
   <p id="car_num_4" style="font-size: 30px;"></p>
   <p id="car_num_5" style="font-size: 30px;"></p>
+  <p id="car_num_6" style="font-size: 30px;"></p>
   </div>
   <div>
   <a href="#" class="btn btn--orange" id="button_num_1" onclick="carnumber(1,1)">1</a>
@@ -106,6 +107,7 @@ button.btn {
       var car3 = document.getElementById("car_num_3");
       var car4 = document.getElementById("car_num_4");
       var car5 = document.getElementById("car_num_5");
+      var car6 = document.getElementById("car_num_6");
       var car_num = document.getElementById("car_num");
       var first_content = document.getElementById("first_content");
       var second_content = document.getElementById("second_content");
@@ -119,6 +121,7 @@ button.btn {
       var car3_text = car3.textContent;
       var car4_text = car4.textContent;
       var car5_text = car5.textContent;
+      var car6_text = car6.textContent;
       console.log(car1_text)
       console.log(car2_text)
       console.log(car3_text)
@@ -139,8 +142,11 @@ button.btn {
         car4.innerHTML = num;
       }else if (car5_text === ""){
         car5.innerHTML = num;
+      }else if (car6_text === ""){
+        car6.innerHTML = num;
       }
       }else if(k === 10){
+        if(car6_text === ""){
         if (car5_text === ""){
           if(car4_text === ""){
             if(car3_text === ""){
@@ -162,11 +168,16 @@ button.btn {
       }else{
         car5.innerHTML = "";
       }
+        }else{
+          car6.innerHTML = "";
+        }
       }else if(k === 11){
-        if(!(car1_text === "") && !(car2_text === "") && !(car3_text === "") && !(car4_text === "") && !(car5_text === "")){
+        if(!(car1_text === "") && !(car2_text === "") && !(car3_text === "") && !(car4_text === "") && !(car5_text === "") && !(car6_text === "")){
           first_content.style.display ="none";
-          car_num.innerHTML = "列番：" + car1_text + car2_text + car3_text + car4_text + car5_text;
+          car_num.innerHTML = "列番：" + car1_text + car2_text + car3_text + car4_text + car5_text + car6_text;
+          var car_num_send = car1_text + car2_text + car3_text + car4_text + car5_text + car6_text;
           second_content.style.display ="block";
+          monitor(car_num_send);
         }
       }else if(k === 12){
         car1.innerHTML = "";
@@ -177,6 +188,18 @@ button.btn {
         first_content.style.display ="block";
           second_content.style.display ="none";
       }
+    }
+    function monitor(car_num){
+      var car_kind = car_num.slice(0,1);
+      var car_sta_s = car_num.slice(1,2);
+      var car_sta_f = car_num.slice(2,3);
+      var car_time_s_h = car_num.slice(3,5);
+      var car_time_s_m = car_num.slice(5,6);
+      console.log("種類：" + car_kind);
+      console.log("発駅番号：" + car_sta_s);
+      console.log("終駅番号：" + car_sta_f);
+      console.log("発車時刻(hour)：" + car_time_s_h);
+      console.log("発車時刻(minute)：" + car_time_s_m);
     }
   </script>
 </body>
