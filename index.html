@@ -69,25 +69,25 @@ button.btn {
   <p id="car_num_5" style="font-size: 30px;"></p>
   </div>
   <div>
-  <a href="#" class="btn btn--orange" id="button_num_1" onclick="carnumber(1)">1</a>
-  <a href="#" class="btn btn--orange" id="button_num_2" onclick="carnumber(2)">2</a>
-  <a href="#" class="btn btn--orange" id="button_num_3" onclick="carnumber(3)">3</a>
+  <a href="#" class="btn btn--orange" id="button_num_1" onclick="carnumber(1,1)">1</a>
+  <a href="#" class="btn btn--orange" id="button_num_2" onclick="carnumber(2,2)">2</a>
+  <a href="#" class="btn btn--orange" id="button_num_3" onclick="carnumber(3,3)">3</a>
   </div>
   <div>
-  <a href="#" class="btn btn--orange" id="button_num_4" onclick="carnumber(4)">4</a>
-  <a href="#" class="btn btn--orange" id="button_num_5" onclick="carnumber(5)">5</a>
-  <a href="#" class="btn btn--orange" id="button_num_6" onclick="carnumber(6)">6</a>
-  <a href="#" class="btn btn--orange" id="button_num_10" onclick="carnumber(10)">←</a>
+  <a href="#" class="btn btn--orange" id="button_num_4" onclick="carnumber(4,4)">4</a>
+  <a href="#" class="btn btn--orange" id="button_num_5" onclick="carnumber(5,5)">5</a>
+  <a href="#" class="btn btn--orange" id="button_num_6" onclick="carnumber(6,6)">6</a>
+  <a href="#" class="btn btn--orange" id="button_num_10" onclick="carnumber(10,10)">←</a>
   </div>
   <div>
-  <a href="#" class="btn btn--orange" id="button_num_7" onclick="carnumber(7)">7</a>
-  <a href="#" class="btn btn--orange" id="button_num_8" onclick="carnumber(8)">8</a>
-  <a href="#" class="btn btn--orange" id="button_num_9" onclick="carnumber(9)">9</a>
-  <a href="#" class="btn btn--orange" id="button_num_10" onclick="carnumber(11)">→</a>
+  <a href="#" class="btn btn--orange" id="button_num_7" onclick="carnumber(7,7)">7</a>
+  <a href="#" class="btn btn--orange" id="button_num_8" onclick="carnumber(8,8)">8</a>
+  <a href="#" class="btn btn--orange" id="button_num_9" onclick="carnumber(9,9)">9</a>
+  <a href="#" class="btn btn--orange" id="button_num_10" onclick="carnumber(11,11)">→</a>
   </div>
   </div>
   <script>
-    function carnumber(num){
+    function carnumber(k,num){
       var car1 = document.getElementById("car_num_1");
       var car2 = document.getElementById("car_num_2");
       var car3 = document.getElementById("car_num_3");
@@ -110,7 +110,7 @@ button.btn {
       console.log(car3_text)
       console.log(car4_text)
       console.log(car5_text)
-      if(num < 10){
+      if(k < 10){
       if (car1_text === ""){
         car1.innerHTML = num;
       }else if (car2_text === ""){
@@ -122,7 +122,7 @@ button.btn {
       }else if (car5_text === ""){
         car5.innerHTML = num;
       }
-      }else if(num === 10){
+      }else if(k === 10){
         if (car5_text === ""){
           if(car4_text === ""){
             if(car3_text === ""){
@@ -144,7 +144,7 @@ button.btn {
       }else{
         car5.innerHTML = "";
       }
-      }else if(num === 11){
+      }else if(k === 11){
         if(!(car1_text === "") && !(car2_text === "") && !(car3_text === "") && !(car4_text === "") && !(car5_text === "")){
           first_content.style.display ="none";
           car_num.innerHTML = "列番：" + car1_text + car2_text + car3_text + car4_text + car5_text;
