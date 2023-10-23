@@ -192,6 +192,7 @@ button.btn {
       }
     }
     function monitor(car_num){
+      var stations = ["品川", "やもかいり", "海島", "海の山新都心", "神代", "旧海道", "新海道", "海道", "船港", "先十", "鳥の島", "北鳥", "上新庄", "海洋", "宮吉"]
       var car_kind = car_num.slice(0,1);
       var car_sta_s = car_num.slice(1,2);
       var car_sta_f = car_num.slice(2,3);
@@ -220,6 +221,7 @@ button.btn {
       }else if(car_sta_s = car_sta_f){
         u_or_d_element.innerHTML = "営終";
       }
+      if(car_sta_s)
     }
   </script>
 </body>
