@@ -56,8 +56,11 @@ button.btn {
   </style>
 </head>
 <body>
+  <div id="second_content">
   <div id="font_2">
-  <p id="car_num" style="font-size: 35px;"></p>
+  <p id="car_num" style="font-size: 35px; text-align: right;"></p>
+    <a href="#" class="btn btn--orange" id="car_num_change" onclick="carnumber(12,12)" style="background-color: #64ff3e;color: white; padding:0px 30px;">変更</a>
+  </div>
   </div>
   <div id="first_content">
   <div id="font_1" style="display: flex;">
@@ -100,6 +103,7 @@ button.btn {
       var car5 = document.getElementById("car_num_5");
       var car_num = document.getElementById("car_num");
       var first_content = document.getElementById("first_content");
+      var second_content = document.getElementById("second_content");
       console.log(car1)
       console.log(car2)
       console.log(car3)
@@ -157,6 +161,7 @@ button.btn {
         if(!(car1_text === "") && !(car2_text === "") && !(car3_text === "") && !(car4_text === "") && !(car5_text === "")){
           first_content.style.display ="none";
           car_num.innerHTML = "列番：" + car1_text + car2_text + car3_text + car4_text + car5_text;
+          second_content.style.display ="block";
         }
       }
     }
