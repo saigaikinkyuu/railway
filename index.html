@@ -65,6 +65,8 @@ button.btn {
   <p id="car_num" style="font-size: 35px; margin:0px;"></p>
       <button onclick="carnumber(12,12)" style="background-color:darkblue; color:white; height:30px; margin-top:13px;">変更する</button>
     </div>
+    <p id="kind_element"></p>
+    <p id="u_or_d_element"></p>
   </div>
   </div>
   <div id="first_content">
@@ -195,11 +197,29 @@ button.btn {
       var car_sta_f = car_num.slice(2,3);
       var car_time_s_h = car_num.slice(3,5);
       var car_time_s_m = car_num.slice(5,6);
+      var kind_element = document.getElementById("kind_element");
+      var u_or_d_element = document.getElementById("u_or_d_element");
       console.log("種類：" + car_kind);
       console.log("発駅番号：" + car_sta_s);
       console.log("終駅番号：" + car_sta_f);
       console.log("発車時刻(hour)：" + car_time_s_h);
       console.log("発車時刻(minute)：" + car_time_s_m);
+      if(car_kind === "O"){
+        kind_element.innerHTML = "普通";
+      }else if(car_kind === "R"){
+        kind_element.innerHTML = "快速";
+      }else if(car_kind === "S"){
+        kind_element.innerHTML = "通勤快速";
+      }else if(car_kind === "L"){
+        kind_element.innerHTML = "特急";
+      }
+      if(car_sta_s < car_sta_f){
+        u_or_d_element.innerHTML = "下り";
+      }else if(car_sta_s > car_sta_f){
+        u_or_d_element.innerHTML = "上り";
+      }if(car_sta_s = car_sta_f){
+        u_or_d_element.innerHTML = "営終";
+      }
     }
   </script>
 </body>
