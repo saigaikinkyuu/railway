@@ -56,6 +56,10 @@ button.btn {
   </style>
 </head>
 <body>
+  <div id="font_2">
+  <p id="car_num" style="font-size: 35px;"></p>
+  </div>
+  <div id="first_content">
   <div id="font_1" style="display: flex;">
   <p id="font_2" style="font-size: 30px;">列番：</p>
   <p id="car_num_1" style="font-size: 30px;"></p>
@@ -73,12 +77,14 @@ button.btn {
   <a href="#" class="btn btn--orange" id="button_num_4" onclick="carnumber(4)">4</a>
   <a href="#" class="btn btn--orange" id="button_num_5" onclick="carnumber(5)">5</a>
   <a href="#" class="btn btn--orange" id="button_num_6" onclick="carnumber(6)">6</a>
+  <a href="#" class="btn btn--orange" id="button_num_10" onclick="carnumber(10)">←</a>
   </div>
   <div>
   <a href="#" class="btn btn--orange" id="button_num_7" onclick="carnumber(7)">7</a>
   <a href="#" class="btn btn--orange" id="button_num_8" onclick="carnumber(8)">8</a>
   <a href="#" class="btn btn--orange" id="button_num_9" onclick="carnumber(9)">9</a>
-  <a href="#" class="btn btn--orange" id="button_num_10" onclick="carnumber(10)">←</a>
+  <a href="#" class="btn btn--orange" id="button_num_10" onclick="carnumber(11)">→</a>
+  </div>
   </div>
   <script>
     function carnumber(num){
@@ -87,6 +93,7 @@ button.btn {
       var car3 = document.getElementById("car_num_3");
       var car4 = document.getElementById("car_num_4");
       var car5 = document.getElementById("car_num_5");
+      var car_num = document.getElementById("car_num");
       console.log(car1)
       console.log(car2)
       console.log(car3)
@@ -114,7 +121,7 @@ button.btn {
       }else if (car5_text === ""){
         car5.innerHTML = num;
       }
-      }else{
+      }else if(num === 10){
         if (car5_text === ""){
           if(car4_text === ""){
             if(car3_text === ""){
@@ -136,6 +143,10 @@ button.btn {
       }else{
         car5.innerHTML = "";
       }
+      }else if(num === 11){
+        if!(car1_text === "" && car2_text === "" && car3_text === "" && car4_text === "" && car5_text === ""){
+          car_num.innerHTML = car1_text + car2_text + car3_text + car4_text + car5_text;
+        }
       }
     }
   </script>
