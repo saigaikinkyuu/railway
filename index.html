@@ -115,8 +115,10 @@ button.btn {
       console.log(car4_text)
       console.log(car5_text)
       if(k < 10){
-      if(k === 0 && car1_text === ""){
+      if(k === 0){
+        if(car1_text === ""){
         car1.innerHTML = num;
+        }
       }else if (car1_text === ""){
         car1.innerHTML = num;
       }else if (car2_text === ""){
