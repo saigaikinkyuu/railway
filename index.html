@@ -230,22 +230,26 @@ button.btn {
       if(car_sta_s < 7){
         station_s = stations_s_or_f[car_sta_s-1];
         console.log('始発駅：' + station_s);
-        if (car_sta_s = 3){
+        if (car_sta_s === "1" && car_sta_s === "2" && car_sta_s === "3"){
+          //変更しない
+        }else if (car_sta_s === "4"){
           car_sta_s = 9;
-        }else if (car_sta_s = 4){
+        }else if (car_sta_s === "5"){
           car_sta_s = 11;
-        }else if (car_sta_s = 5){
+        }else if (car_sta_s === "6"){
           car_sta_s = 15;
         }
       }
       if(car_sta_f < 7){
         station_f = stations_s_or_f[car_sta_f-1];
         console.log('終着駅：' + station_f);
-        if (car_sta_f = 3){
+        if (car_sta_f === "1" && car_sta_f === "2" && car_sta_f === "3"){
+          //変更しない
+        }else if (car_sta_f === "4"){
           car_sta_f = 9;
-        }else if (car_sta_f = 4){
+        }else if (car_sta_f === "5"){
           car_sta_f = 11;
-        }else if (car_sta_f = 5){
+        }else if (car_sta_f === "6"){
           car_sta_f = 15;
         }
       }
