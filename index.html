@@ -204,6 +204,8 @@ button.btn {
       var u_or_d_element = document.getElementById("u_or_d_element");
       var station_s;
       var station_f;
+      var sta_num;
+      var stop_station = "";
       console.log("種類：" + car_kind);
       console.log("発駅番号：" + car_sta_s);
       console.log("終駅番号：" + car_sta_f);
@@ -228,10 +230,37 @@ button.btn {
       if(car_sta_s < 7){
         station_s = stations_s_or_f[car_sta_s-1];
         console.log('始発駅：' + station_s);
+        if (car_sta_s = 3){
+          car_sta_s = 9;
+        }else if (car_sta_s = 4){
+          car_sta_s = 11;
+        }else if (car_sta_s = 5){
+          car_sta_s = 15;
+        }
       }
       if(car_sta_f < 7){
         station_f = stations_s_or_f[car_sta_f-1];
         console.log('終着駅：' + station_f);
+        if (car_sta_f = 3){
+          car_sta_f = 9;
+        }else if (car_sta_f = 4){
+          car_sta_f = 11;
+        }else if (car_sta_f = 5){
+          car_sta_f = 15;
+        }
+      }
+      if(car_sta_s > car_sta_f){
+        sta_num = car_sta_s-car_sta_f;
+      for (var u = 0;u<sta_num;u++){
+        stop_station = stations[car_sta_f+u-1];
+        console.log('停車駅：' + stop_station);
+      }
+      }else if(car_sta_s < car_sta_f){
+        sta_num = car_sta_f-car_sta_s;
+      for (var d = 0;d<sta_num;d++){
+        stop_station = stations[car_sta_s+d-1];
+        console.log('停車駅：' + stop_station);
+      }
       }
     }
   </script>
