@@ -260,12 +260,14 @@ button.btn {
       for (var u = 0;u<sta_num;u++){
         stop_station = stations[car_sta_f+u-1];
         console.log('停車駅：' + stop_station);
+        console.log('回数：' + u);
       }
       }else if(car_sta_s < car_sta_f){
         sta_num = car_sta_f-car_sta_s;
       for (var d = 0;d<sta_num;d++){
         stop_station = stations[car_sta_s+d-1];
         console.log('停車駅：' + stop_station);
+        console.log('回数：' + d);
       }
       }
     }
