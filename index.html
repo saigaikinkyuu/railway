@@ -258,7 +258,7 @@ button.btn {
         sta_num = car_sta_s-car_sta_f;
         console.log(sta_num);
       for (var u = 0;u<sta_num;u++){
-        stop_sta_num = car_sta_f + u;
+        stop_sta_num = car_sta_f + u-9;
       console.log(car_sta_s)
       console.log(car_sta_f)
         console.log("ステーション番号："+stop_sta_num);
@@ -269,7 +269,7 @@ button.btn {
       }else if(car_sta_s < car_sta_f){
         sta_num = car_sta_f-car_sta_s;
         console.log(sta_num);
-      for (var d = 0;d < sta_num;d++){
+      for (var d = 1;d < sta_num;d++){
         console.log("ステーション番号："+stop_sta_num);
         stop_sta_num = car_sta_s + d-9;
       console.log(car_sta_s)
