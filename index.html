@@ -202,8 +202,8 @@ button.btn {
       var car_time_s_m = car_num.slice(5,6);
       var kind_element = document.getElementById("kind_element");
       var u_or_d_element = document.getElementById("u_or_d_element");
-      var station_s_Index;
       var station_s;
+      var station_f;
       console.log("種類：" + car_kind);
       console.log("発駅番号：" + car_sta_s);
       console.log("終駅番号：" + car_sta_f);
@@ -228,6 +228,10 @@ button.btn {
       if(car_sta_s < 7){
         station_s = stations_s_or_f[car_sta_s-1];
         console.log('始発駅：' + station_s);
+      }
+      if(car_sta_f < 7){
+        station_f = stations_s_or_f[car_sta_f-1];
+        console.log('始発駅：' + station_f);
       }
     }
   </script>
