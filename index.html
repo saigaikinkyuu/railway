@@ -277,11 +277,11 @@ button.btn {
         console.log('回数：' + u);
       }
       }else if(car_sta_s < car_sta_f){
-        sta_num = car_sta_f-car_sta_s;
+        sta_num = parseInt(car_sta_f)-parseInt(car_sta_s)+1;
         console.log(sta_num);
-      for (var d = 0;d < sta_num-1;d++){
+      for (var d = 0;d < sta_num;d++){
         console.log("ステーション番号："+stop_sta_num);
-        stop_sta_num = parseInt(car_sta_s) + parseInt(d);
+        stop_sta_num = parseInt(car_sta_s) + parseInt(d)-1;
       console.log(car_sta_s)
       console.log(car_sta_f)
         stop_station = stations[stop_sta_num];
