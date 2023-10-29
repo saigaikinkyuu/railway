@@ -435,7 +435,6 @@ button.btn {
                     sta_d[sta_a_or_d] = data[i].time_d15;
                   }
               }
-                break; // 一致するものが見つかったらループを終了
                 // 結果を確認
                 for (var time_a_d = 0; time_a_d<16; time_a_d++){
               console.log('Car found:');
@@ -458,6 +457,7 @@ button.btn {
             console.log('駅(着)：' + sta_a[sta_a_or_d] + ' 駅(発)：' + sta_d[sta_a_or_d])
               //
           }
+                break; // 一致するものが見つかったらループを終了
             }
           }
           })
