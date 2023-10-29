@@ -438,7 +438,8 @@ button.btn {
                 // 結果を確認
                 for (var time_a_d = 1; time_a_d<16; time_a_d++){
               console.log('Car found:');
-                  if(!time_a_d === 1){
+                  if(time_a_d === 1){
+                  }else{
               var jstDate_1 = new Date(new Date(sta_a[time_a_d]).getTime() + (9 * 60 * 60 * 1000));
 
               // 時刻部分を取得
@@ -448,7 +449,8 @@ button.btn {
               sta_a[sta_a_or_d] = hours_1.toString().padStart(2, '0') + ':' + minutes_1.toString().padStart(2, '0') + ':' + seconds_1.toString().padStart(2, '0');
                   }
 
-                  if(!time_a_d === 15){
+                  if(time_a_d === 15){
+                  }else{
               var jstDate_2 = new Date(new Date(sta_d[time_a_d]).getTime() + (9 * 60 * 60 * 1000));
 
               // 時刻部分を取得
