@@ -77,79 +77,79 @@ button.btn {
       </thead>
       <tbody id="tbody_1">
         <tr>
-          <td id="sta_name_1"></td>
-          <td id="sta_a_1"></td>
-          <td id="sta_d_1"></td>
+          <td id="sta_name1"></td>
+          <td id="sta_a1"></td>
+          <td id="sta_d1"></td>
         </tr>
         <tr>
-          <td id="sta_name_2"></td>
-          <td id="sta_a_2"></td>
-          <td id="sta_d_2"></td>
+          <td id="sta_name2"></td>
+          <td id="sta_a2"></td>
+          <td id="sta_d2"></td>
         </tr>
         <tr>
-          <td id="sta_name_3"></td>
-          <td id="sta_a_3"></td>
-          <td id="sta_d_3"></td>
+          <td id="sta_name3"></td>
+          <td id="sta_a3"></td>
+          <td id="sta_d3"></td>
         </tr>
         <tr>
-          <td id="sta_name_4"></td>
-          <td id="sta_a_4"></td>
-          <td id="sta_d_4"></td>
+          <td id="sta_name4"></td>
+          <td id="sta_a4"></td>
+          <td id="sta_d4"></td>
         </tr>
         <tr>
-          <td id="sta_name_5"></td>
-          <td id="sta_a_5"></td>
-          <td id="sta_d_5"></td>
+          <td id="sta_name5"></td>
+          <td id="sta_a5"></td>
+          <td id="sta_d5"></td>
         </tr>
         <tr>
-          <td id="sta_name_6"></td>
-          <td id="sta_a_6"></td>
-          <td id="sta_d_6"></td>
+          <td id="sta_name6"></td>
+          <td id="sta_a6"></td>
+          <td id="sta_d6"></td>
         </tr>
         <tr>
-          <td id="sta_name_7"></td>
-          <td id="sta_a_7"></td>
-          <td id="sta_d_7"></td>
+          <td id="sta_name7"></td>
+          <td id="sta_a7"></td>
+          <td id="sta_d7"></td>
         </tr>
         <tr>
-          <td id="sta_name_8"></td>
-          <td id="sta_a_8"></td>
-          <td id="sta_d_8"></td>
+          <td id="sta_name8"></td>
+          <td id="sta_a8"></td>
+          <td id="sta_d8"></td>
         </tr>
         <tr>
-          <td id="sta_name_9"></td>
-          <td id="sta_a_9"></td>
-          <td id="sta_d_9"></td>
+          <td id="sta_name9"></td>
+          <td id="sta_a9"></td>
+          <td id="sta_d9"></td>
         </tr>
         <tr>
-          <td id="sta_name_10"></td>
-          <td id="sta_a_10"></td>
-          <td id="sta_d_10"></td>
+          <td id="sta_name10"></td>
+          <td id="sta_a10"></td>
+          <td id="sta_d10"></td>
         </tr>
         <tr>
-          <td id="sta_name_11"></td>
-          <td id="sta_a_11"></td>
-          <td id="sta_d_11"></td>
+          <td id="sta_name11"></td>
+          <td id="sta_a11"></td>
+          <td id="sta_d11"></td>
         </tr>
         <tr>
-          <td id="sta_name_12"></td>
-          <td id="sta_a_12"></td>
-          <td id="sta_d_12"></td>
+          <td id="sta_name12"></td>
+          <td id="sta_a12"></td>
+          <td id="sta_d12"></td>
         </tr>
         <tr>
-          <td id="sta_name_13"></td>
-          <td id="sta_a_13"></td>
-          <td id="sta_d_13"></td>
+          <td id="sta_name13"></td>
+          <td id="sta_a13"></td>
+          <td id="sta_d13"></td>
         </tr>
         <tr>
-          <td id="sta_name_14"></td>
-          <td id="sta_a_14"></td>
-          <td id="sta_d_14"></td>
+          <td id="sta_name14"></td>
+          <td id="sta_a14"></td>
+          <td id="sta_d14"></td>
         </tr>
         <tr>
-          <td id="sta_name_15"></td>
-          <td id="sta_a_15"></td>
-          <td id="sta_d_15"></td>
+          <td id="sta_name15"></td>
+          <td id="sta_a15"></td>
+          <td id="sta_d15"></td>
         </tr>
       </tbody>
     </table>
@@ -450,6 +450,19 @@ button.btn {
               sta_a[sta_a_or_d] = hours_1.toString().padStart(2, '0') + ':' + minutes_1.toString().padStart(2, '0') + ':' + seconds_1.toString().padStart(2, '0');
                   }
 
+                  if(car_sta_f === 3){
+                  if(time_a_d > 8){
+                    sta_d[sta_a_or_d] = sta_d[time_a_d]
+                  }else{
+              var jstDate_2 = new Date(new Date(sta_d[time_a_d]).getTime() + (9 * 60 * 60 * 1000));
+
+              // 時刻部分を取得
+              var hours_2 = jstDate_2.getUTCHours();
+              var minutes_2 = jstDate_2.getUTCMinutes();
+              var seconds_2 = jstDate_2.getUTCSeconds();
+              sta_d[sta_a_or_d] = hours_2.toString().padStart(2, '0') + ':' + minutes_2.toString().padStart(2, '0') + ':' + seconds_2.toString().padStart(2, '0');
+                  }
+                  }else if(car_sta_f === 6){
                   if(time_a_d === 15){
                     sta_d[sta_a_or_d] = sta_d[time_a_d]
                   }else{
@@ -460,6 +473,7 @@ button.btn {
               var minutes_2 = jstDate_2.getUTCMinutes();
               var seconds_2 = jstDate_2.getUTCSeconds();
               sta_d[sta_a_or_d] = hours_2.toString().padStart(2, '0') + ':' + minutes_2.toString().padStart(2, '0') + ':' + seconds_2.toString().padStart(2, '0');
+                  }
                   }
               // フォーマットされた時刻を作成
             console.log('駅(着)：' + sta_a[sta_a_or_d] + ' 駅(発)：' + sta_d[sta_a_or_d])
