@@ -71,10 +71,86 @@ button.btn {
       <thead>
         <tr>
           <th>駅名</th>
+          <th>着時刻</th>
           <th>発時刻</th>
         </tr>
       </thead>
       <tbody id="tbody_1">
+        <tr>
+          <td id="sta_name_1"></td>
+          <td id="sta_a_1"></td>
+          <td id="sta_d_1"></td>
+        </tr>
+        <tr>
+          <td id="sta_name_2"></td>
+          <td id="sta_a_2"></td>
+          <td id="sta_d_2"></td>
+        </tr>
+        <tr>
+          <td id="sta_name_3"></td>
+          <td id="sta_a_3"></td>
+          <td id="sta_d_3"></td>
+        </tr>
+        <tr>
+          <td id="sta_name_4"></td>
+          <td id="sta_a_4"></td>
+          <td id="sta_d_4"></td>
+        </tr>
+        <tr>
+          <td id="sta_name_5"></td>
+          <td id="sta_a_5"></td>
+          <td id="sta_d_5"></td>
+        </tr>
+        <tr>
+          <td id="sta_name_6"></td>
+          <td id="sta_a_6"></td>
+          <td id="sta_d_6"></td>
+        </tr>
+        <tr>
+          <td id="sta_name_7"></td>
+          <td id="sta_a_7"></td>
+          <td id="sta_d_7"></td>
+        </tr>
+        <tr>
+          <td id="sta_name_8"></td>
+          <td id="sta_a_8"></td>
+          <td id="sta_d_8"></td>
+        </tr>
+        <tr>
+          <td id="sta_name_9"></td>
+          <td id="sta_a_9"></td>
+          <td id="sta_d_9"></td>
+        </tr>
+        <tr>
+          <td id="sta_name_10"></td>
+          <td id="sta_a_10"></td>
+          <td id="sta_d_10"></td>
+        </tr>
+        <tr>
+          <td id="sta_name_11"></td>
+          <td id="sta_a_11"></td>
+          <td id="sta_d_11"></td>
+        </tr>
+        <tr>
+          <td id="sta_name_12"></td>
+          <td id="sta_a_12"></td>
+          <td id="sta_d_12"></td>
+        </tr>
+        <tr>
+          <td id="sta_name_13"></td>
+          <td id="sta_a_13"></td>
+          <td id="sta_d_13"></td>
+        </tr>
+        <tr>
+          <td id="sta_name_14"></td>
+          <td id="sta_a_14"></td>
+          <td id="sta_d_14"></td>
+        </tr>
+        <tr>
+          <td id="sta_name_15"></td>
+          <td id="sta_a_15"></td>
+          <td id="sta_d_15"></td>
+        </tr>
       </tbody>
     </table>
   </div>
@@ -290,29 +366,38 @@ button.btn {
           .then(response => response.json())
           .then(data => {
             // ループを使用して car_num を検索
-            var foundCar = null;
+            var sta_a_1,sta_d_1,sta_a_2,sta_d_2,sta_a_3,sta_d_3,sta_a_4,sta_d_4,sta_a_5,sta_d_5,sta_a_6,sta_d_6,sta_a_7,sta_d_7,sta_a_8,sta_d_8,sta_a_9,sta_d_9,sta_a_10,sta_d_10,sta_a_11,sta_d_11,sta_a_12,sta_d_12,sta_a_13,sta__13d,sta_a_14,sta_d_14,sta_a_15,sta_d_15 = null;
         for (var i = 0; i < data.length; i++) {
               if (data[i].car_nums === car_num) {
-                foundCar = data[i].time;
+                for (var sta_a_or_d = 0; sta_a_or_d < 16 sta_a_or_d++){
+                sta_a_[sta_a_or_d] = data[i].time_a_[sta_a_or_d];
+                sta_d_[sta_a_or_d] = data[i].time_d_[sta_a_or_d];
                 break; // 一致するものが見つかったらループを終了
               }
             }
 
             // 結果を確認
-            if (foundCar) {
+          for (var time_a_d = 0; time_a_d<16; time_a_d){
               console.log('Car found:', foundCar);
-              var jstDate = new Date(foundCar.getTime() + (9 * 60 * 60 * 1000));
+              var jstDate_1 = new Date(sta_a_[time_a_d].getTime() + (9 * 60 * 60 * 1000));
 
               // 時刻部分を取得
-              var hours = jstDate.getUTCHours();
-              var minutes = jstDate.getUTCMinutes();
-              var seconds = jstDate.getUTCSeconds();
+              var hours_1 = jstDate_1.getUTCHours();
+              var minutes_1 = jstDate_1.getUTCMinutes();
+              var seconds_1 = jstDate_1.getUTCSeconds();
 
+              var jstDate_2 = new Date(sta_d_[time_a_d].getTime() + (9 * 60 * 60 * 1000));
+
+              // 時刻部分を取得
+              var hours_2 = jstDate_2.getUTCHours();
+              var minutes_2 = jstDate_2.getUTCMinutes();
+              var seconds_2 = jstDate_2.getUTCSeconds();
               // フォーマットされた時刻を作成
-              var sta_s_time = hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0');
-            } else {
-              console.log('Car not found.');
-            }
+              sta_a_[sta_a_or_d] = hours_1.toString().padStart(2, '0') + ':' + minutes_1.toString().padStart(2, '0') + ':' + seconds_1.toString().padStart(2, '0');
+              sta_d_[sta_a_or_d] = hours_2.toString().padStart(2, '0') + ':' + minutes_2.toString().padStart(2, '0') + ':' + seconds_2.toString().padStart(2, '0');
+            console.log('駅(着)：' + sta_a_[sta_a_or_d] + ' 駅(発)：' + sta_d_[sta_a_or_d])
+              //
+          }
           })
           .catch(error => {
             console.error('Error fetching JSON data:', error);
@@ -325,21 +410,6 @@ button.btn {
         stop_station = stations[stop_sta_num];
         console.log('停車駅：' + stop_station);
         console.log('回数：' + d);
-        var table = document.getElementById("car_table").getElementsByTagName('tbody')[0];
-        var row = table.insertRow(d); // 行を追加
-
-        for (var j = 0; j < 2; j++) {
-          var cell = row.insertCell(j); // セルを追加
-          if(j=0){
-          cell.textContent = stop_station; // セルの内容を設定
-          }else if(j = 1 && d = 0){
-            cell.textContent = sta_s_time;
-          }else if(j = 1 && d = 1){
-            cell.textContent = sta_s_time;
-          }else if(j = 1 && d = 2){
-            cell.textContent = sta_s_time;
-          }
-        }
       }
       }
     }
