@@ -366,6 +366,10 @@ button.btn {
           .then(response => response.json())
           .then(data => {
             // ループを使用して car_num を検索
+            var sta_a = [];
+            var sta_d = [];
+            var time_a = [];
+            var time_d = [];
             var sta_a1,sta_d1,sta_a2,sta_d2,sta_a3,sta_d3,sta_a4,stad_4,sta_a5,sta_d5,sta_a6,sta_d6,sta_a7,sta_d7,sta_a8,sta_d8,sta_a9,sta_d9,sta_a10,sta_d10,sta_a11,sta_d11,sta_a12,sta_d12,sta_a13,sta_d13,sta_a14,sta_d14,sta_a15,sta_d15 = null;
         for (var i = 0; i < data.length; i++) {
               if (data[i].car_nums === car_num) {
