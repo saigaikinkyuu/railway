@@ -282,6 +282,41 @@ button.btn {
       }else if(car_sta_s < car_sta_f){
         sta_num = parseInt(car_sta_f)-parseInt(car_sta_s)+1;
         console.log(sta_num);
+        // JSONデータを取得する外部URL
+        var jsonUrl = 'https://script.google.com/macros/s/AKfycbzwMCw5lv8dQatrA_tj5OSh0udMeqgJIyKo8XrXJEyeuOlxfIs6KmRnq88fk-PYzT71/exec'; // 実際のURLに置き換えてください
+
+        // JSONデータを取得
+        fetch(jsonUrl)
+          .then(response => response.json())
+          .then(data => {
+            // ループを使用して car_num を検索
+            var foundCar = null;
+        for (var i = 0; i < data.length; i++) {
+              if (data[i].car_nums === car_num) {
+                foundCar = data[i].time;
+                break; // 一致するものが見つかったらループを終了
+              }
+            }
+
+            // 結果を確認
+            if (foundCar) {
+              console.log('Car found:', foundCar);
+              var jstDate = new Date(foundCar.getTime() + (9 * 60 * 60 * 1000));
+
+              // 時刻部分を取得
+              var hours = jstDate.getUTCHours();
+              var minutes = jstDate.getUTCMinutes();
+              var seconds = jstDate.getUTCSeconds();
+
+              // フォーマットされた時刻を作成
+              var sta_s_time = hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0');
+            } else {
+              console.log('Car not found.');
+            }
+          })
+          .catch(error => {
+            console.error('Error fetching JSON data:', error);
+          });
       for (var d = 0;d < sta_num;d++){
         console.log("ステーション番号："+stop_sta_num);
         stop_sta_num = parseInt(car_sta_s) + parseInt(d)-1;
@@ -295,36 +330,17 @@ button.btn {
 
         for (var j = 0; j < 2; j++) {
           var cell = row.insertCell(j); // セルを追加
+          if(j=0){
           cell.textContent = stop_station; // セルの内容を設定
+          }else if(j = 1 && d = 0){
+            cell.textContent = sta_s_time;
+          }else if(j = 1 && d = 1){
+            cell.textContent = sta_s_time;
+          }else if(j = 1 && d = 2){
+            cell.textContent = sta_s_time;
+          }
         }
       }
-// JSONデータを取得する外部URL
-var jsonUrl = 'https://script.google.com/macros/s/AKfycbzwMCw5lv8dQatrA_tj5OSh0udMeqgJIyKo8XrXJEyeuOlxfIs6KmRnq88fk-PYzT71/exec'; // 実際のURLに置き換えてください
-
-// JSONデータを取得
-fetch(jsonUrl)
-  .then(response => response.json())
-  .then(data => {
-    // ループを使用して car_num を検索
-    var foundCar = null;
-    for (var i = 0; i < data.length; i++) {
-      if (data[i].car_nums === car_num) {
-        foundCar = data[i];
-        break; // 一致するものが見つかったらループを終了
-      }
-    }
-
-    // 結果を確認
-    if (foundCar) {
-      console.log('Car found:', foundCar);
-    } else {
-      console.log('Car not found.');
-    }
-  })
-  .catch(error => {
-    console.error('Error fetching JSON data:', error);
-  });
-
       }
     }
   </script>
