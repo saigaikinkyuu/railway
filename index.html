@@ -273,7 +273,7 @@ button.btn {
         console.log("ステーション番号："+stop_sta_num);
         var car_sta_s_2 = car_sta_s.textContent;
         var d_2 = d.textContent;
-        stop_sta_num = car_sta_s_2 + d_2;
+        stop_sta_num = parseInt(car_sta_s) + parseInt(d);
       console.log(car_sta_s)
       console.log(car_sta_f)
         stop_station = stations[stop_sta_num];
