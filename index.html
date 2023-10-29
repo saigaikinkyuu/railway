@@ -445,6 +445,7 @@ button.btn {
               var hours_1 = jstDate_1.getUTCHours();
               var minutes_1 = jstDate_1.getUTCMinutes();
               var seconds_1 = jstDate_1.getUTCSeconds();
+              sta_a[sta_a_or_d] = hours_1.toString().padStart(2, '0') + ':' + minutes_1.toString().padStart(2, '0') + ':' + seconds_1.toString().padStart(2, '0');
                   }
 
                   if(!time_a_d === 15){
@@ -454,10 +455,9 @@ button.btn {
               var hours_2 = jstDate_2.getUTCHours();
               var minutes_2 = jstDate_2.getUTCMinutes();
               var seconds_2 = jstDate_2.getUTCSeconds();
+              sta_d[sta_a_or_d] = hours_2.toString().padStart(2, '0') + ':' + minutes_2.toString().padStart(2, '0') + ':' + seconds_2.toString().padStart(2, '0');
                   }
               // フォーマットされた時刻を作成
-              sta_a[sta_a_or_d] = hours_1.toString().padStart(2, '0') + ':' + minutes_1.toString().padStart(2, '0') + ':' + seconds_1.toString().padStart(2, '0');
-              sta_d[sta_a_or_d] = hours_2.toString().padStart(2, '0') + ':' + minutes_2.toString().padStart(2, '0') + ':' + seconds_2.toString().padStart(2, '0');
             console.log('駅(着)：' + sta_a[sta_a_or_d] + ' 駅(発)：' + sta_d[sta_a_or_d])
               //
           }
