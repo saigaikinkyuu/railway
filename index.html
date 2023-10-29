@@ -381,14 +381,14 @@ button.btn {
             // 結果を確認
           for (var time_a_d = 0; time_a_d<16; time_a_d){
               console.log('Car found:', foundCar);
-              var jstDate_1 = new Date(sta_a_[time_a_d].getTime() + (9 * 60 * 60 * 1000));
+              var jstDate_1 = new Date(sta_a[time_a_d].getTime() + (9 * 60 * 60 * 1000));
 
               // 時刻部分を取得
               var hours_1 = jstDate_1.getUTCHours();
               var minutes_1 = jstDate_1.getUTCMinutes();
               var seconds_1 = jstDate_1.getUTCSeconds();
 
-              var jstDate_2 = new Date(sta_d_[time_a_d].getTime() + (9 * 60 * 60 * 1000));
+              var jstDate_2 = new Date(sta_d[time_a_d].getTime() + (9 * 60 * 60 * 1000));
 
               // 時刻部分を取得
               var hours_2 = jstDate_2.getUTCHours();
