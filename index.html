@@ -440,6 +440,7 @@ button.btn {
               console.log('Car found:');
                   if(time_a_d === 1){
                     sta_a[sta_a_or_d] = sta_a[time_a_d]
+                    document.getElementById("sta_a" + sta_a_or_d).textContent = sta_a[sta_a_or_d]
                   }else{
               var jstDate_1 = new Date(new Date(sta_a[time_a_d]).getTime() + (9 * 60 * 60 * 1000));
 
@@ -448,11 +449,13 @@ button.btn {
               var minutes_1 = jstDate_1.getUTCMinutes();
               var seconds_1 = jstDate_1.getUTCSeconds();
               sta_a[sta_a_or_d] = hours_1.toString().padStart(2, '0') + ':' + minutes_1.toString().padStart(2, '0') + ':' + seconds_1.toString().padStart(2, '0');
+                    document.getElementById("sta_a" + sta_a_or_d).textContent = sta_a[sta_a_or_d]
                   }
 
                   if(car_sta_f === '3'){
                   if(time_a_d > 7){
                     sta_d[sta_a_or_d] = sta_d[time_a_d]
+                    document.getElementById("sta_d" + sta_a_or_d).textContent = sta_d[sta_a_or_d]
                   }else{
               var jstDate_2 = new Date(new Date(sta_d[time_a_d]).getTime() + (9 * 60 * 60 * 1000));
 
@@ -461,10 +464,12 @@ button.btn {
               var minutes_2 = jstDate_2.getUTCMinutes();
               var seconds_2 = jstDate_2.getUTCSeconds();
               sta_d[sta_a_or_d] = hours_2.toString().padStart(2, '0') + ':' + minutes_2.toString().padStart(2, '0') + ':' + seconds_2.toString().padStart(2, '0');
+                    document.getElementById("sta_d" + sta_a_or_d).textContent = sta_d[sta_a_or_d]
                   }
                   }else if(car_sta_f === '6'){
                   if(time_a_d === 15){
                     sta_d[sta_a_or_d] = sta_d[time_a_d]
+                    document.getElementById("sta_d" + sta_a_or_d).textContent = sta_d[sta_a_or_d]
                   }else{
               var jstDate_2 = new Date(new Date(sta_d[time_a_d]).getTime() + (9 * 60 * 60 * 1000));
 
@@ -473,6 +478,7 @@ button.btn {
               var minutes_2 = jstDate_2.getUTCMinutes();
               var seconds_2 = jstDate_2.getUTCSeconds();
               sta_d[sta_a_or_d] = hours_2.toString().padStart(2, '0') + ':' + minutes_2.toString().padStart(2, '0') + ':' + seconds_2.toString().padStart(2, '0');
+                    document.getElementById("sta_d" + sta_a_or_d).textContent = sta_d[sta_a_or_d]
                   }
                   }
               // フォーマットされた時刻を作成
