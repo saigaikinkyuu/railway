@@ -366,12 +366,14 @@ button.btn {
           .then(response => response.json())
           .then(data => {
             // ループを使用して car_num を検索
+            var sta_a = [];
+            var sta_d = [];
             var sta_a_1,sta_d_1,sta_a_2,sta_d_2,sta_a_3,sta_d_3,sta_a_4,sta_d_4,sta_a_5,sta_d_5,sta_a_6,sta_d_6,sta_a_7,sta_d_7,sta_a_8,sta_d_8,sta_a_9,sta_d_9,sta_a_10,sta_d_10,sta_a_11,sta_d_11,sta_a_12,sta_d_12,sta_a_13,sta__13d,sta_a_14,sta_d_14,sta_a_15,sta_d_15 = null;
         for (var i = 0; i < data.length; i++) {
               if (data[i].car_nums === car_num) {
                 for (var sta_a_or_d = 1; sta_a_or_d < 17; sta_a_or_d++){
-                sta_a_[sta_a_or_d] = data[i].time_a_[sta_a_or_d];
-                sta_d_[sta_a_or_d] = data[i].time_d_[sta_a_or_d];
+                sta_a[sta_a_or_d] = data[i].time_a[sta_a_or_d];
+                sta_d[sta_a_or_d] = data[i].time_d[sta_a_or_d];
                 break; // 一致するものが見つかったらループを終了
               }
             }
@@ -393,9 +395,9 @@ button.btn {
               var minutes_2 = jstDate_2.getUTCMinutes();
               var seconds_2 = jstDate_2.getUTCSeconds();
               // フォーマットされた時刻を作成
-              sta_a_[sta_a_or_d] = hours_1.toString().padStart(2, '0') + ':' + minutes_1.toString().padStart(2, '0') + ':' + seconds_1.toString().padStart(2, '0');
-              sta_d_[sta_a_or_d] = hours_2.toString().padStart(2, '0') + ':' + minutes_2.toString().padStart(2, '0') + ':' + seconds_2.toString().padStart(2, '0');
-            console.log('駅(着)：' + sta_a_[sta_a_or_d] + ' 駅(発)：' + sta_d_[sta_a_or_d])
+              sta_a[sta_a_or_d] = hours_1.toString().padStart(2, '0') + ':' + minutes_1.toString().padStart(2, '0') + ':' + seconds_1.toString().padStart(2, '0');
+              sta_d[sta_a_or_d] = hours_2.toString().padStart(2, '0') + ':' + minutes_2.toString().padStart(2, '0') + ':' + seconds_2.toString().padStart(2, '0');
+            console.log('駅(着)：' + sta_a[sta_a_or_d] + ' 駅(発)：' + sta_d[sta_a_or_d])
               //
           }
           }
