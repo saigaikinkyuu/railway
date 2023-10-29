@@ -436,10 +436,8 @@ button.btn {
                   }
               }
                 break; // 一致するものが見つかったらループを終了
-            }
-
-            // 結果を確認
-          for (var time_a_d = 0; time_a_d<16; time_a_d){
+                // 結果を確認
+                for (var time_a_d = 0; time_a_d<16; time_a_d){
               console.log('Car found:', foundCar);
               var jstDate_1 = new Date(sta_a[time_a_d].getTime() + (9 * 60 * 60 * 1000));
 
@@ -460,6 +458,7 @@ button.btn {
             console.log('駅(着)：' + sta_a[sta_a_or_d] + ' 駅(発)：' + sta_d[sta_a_or_d])
               //
           }
+            }
           }
           })
           .catch(error => {
