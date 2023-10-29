@@ -372,10 +372,71 @@ button.btn {
         for (var i = 0; i < data.length; i++) {
               if (data[i].car_nums === car_num) {
                 for (var sta_a_or_d = 1; sta_a_or_d < 17; sta_a_or_d++){
-                sta_a[sta_a_or_d] = data[i].time_a[sta_a_or_d];
-                sta_d[sta_a_or_d] = data[i].time_d[sta_a_or_d];
-                break; // 一致するものが見つかったらループを終了
+                  if(sta_a_or_d = 1){
+                    //
+                    sta_a[sta_a_or_d] = data[i].time_a1;
+                    sta_d[sta_a_or_d] = data[i].time_d1;
+                  }else if(sta_a_or_d = 2){
+                    //
+                    sta_a[sta_a_or_d] = data[i].time_a2;
+                    sta_d[sta_a_or_d] = data[i].time_d2;
+                  }else if(sta_a_or_d = 2){
+                    //
+                    sta_a[sta_a_or_d] = data[i].time_a3;
+                    sta_d[sta_a_or_d] = data[i].time_d3;
+                  }else if(sta_a_or_d = 3){
+                    //
+                    sta_a[sta_a_or_d] = data[i].time_a4;
+                    sta_d[sta_a_or_d] = data[i].time_d4;
+                  }else if(sta_a_or_d = 4){
+                    //
+                    sta_a[sta_a_or_d] = data[i].time_a5;
+                    sta_d[sta_a_or_d] = data[i].time_d5;
+                  }else if(sta_a_or_d = 5){
+                    //
+                    sta_a[sta_a_or_d] = data[i].time_a6;
+                    sta_d[sta_a_or_d] = data[i].time_d6;
+                  }else if(sta_a_or_d = 6){
+                    //
+                    sta_a[sta_a_or_d] = data[i].time_a7;
+                    sta_d[sta_a_or_d] = data[i].time_d7;
+                  }else if(sta_a_or_d = 7){
+                    //
+                    sta_a[sta_a_or_d] = data[i].time_a8;
+                    sta_d[sta_a_or_d] = data[i].time_d8;
+                  }else if(sta_a_or_d = 8){
+                    //
+                    sta_a[sta_a_or_d] = data[i].time_a9;
+                    sta_d[sta_a_or_d] = data[i].time_d9;
+                  }else if(sta_a_or_d = 9){
+                    //
+                    sta_a[sta_a_or_d] = data[i].time_a10;
+                    sta_d[sta_a_or_d] = data[i].time_d10;
+                  }else if(sta_a_or_d = 10){
+                    //
+                    sta_a[sta_a_or_d] = data[i].time_a11;
+                    sta_d[sta_a_or_d] = data[i].time_d11;
+                  }else if(sta_a_or_d = 11){
+                    //
+                    sta_a[sta_a_or_d] = data[i].time_a12;
+                    sta_d[sta_a_or_d] = data[i].time_d12;
+                  }else if(sta_a_or_d = 12){
+                    //
+                    sta_a[sta_a_or_d] = data[i].time_a13;
+                    sta_d[sta_a_or_d] = data[i].time_d13;
+                  }else if(sta_a_or_d = 13){
+                    //
+                    sta_a[sta_a_or_d] = data[i].time_a14;
+                    sta_d[sta_a_or_d] = data[i].time_d14;
+                  }else if(sta_a_or_d = 14){
+                    //
+                  }else if(sta_a_or_d = 15){
+                    //
+                    sta_a[sta_a_or_d] = data[i].time_a15;
+                    sta_d[sta_a_or_d] = data[i].time_d15;
+                  }
               }
+                break; // 一致するものが見つかったらループを終了
             }
 
             // 結果を確認
