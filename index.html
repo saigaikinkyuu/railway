@@ -67,6 +67,14 @@ button.btn {
     </div>
     <p id="kind_element"></p>
     <p id="u_or_d_element"></p>
+    <table id="car_table">
+      <tbody>
+        <tr>
+          <th>駅名</th>
+          <th>発時刻</th>
+        </tr>
+      </tbody>
+    </table>
   </div>
   </div>
   <div id="first_content">
@@ -277,6 +285,13 @@ button.btn {
         stop_station = stations[stop_sta_num];
         console.log('停車駅：' + stop_station);
         console.log('回数：' + d);
+        var table = document.getElementById("car_table").getElementsByTagName('tbody')[0];
+        var row = table.insertRow(d); // 行を追加
+
+        for (var j = 0; j < 3; j++) {
+          var cell = row.insertCell(j); // セルを追加
+          cell.textContent = stop_station; // セルの内容を設定
+        }
       }
 // JSONデータを取得する外部URL
 var jsonUrl = 'https://script.google.com/macros/s/AKfycbzwMCw5lv8dQatrA_tj5OSh0udMeqgJIyKo8XrXJEyeuOlxfIs6KmRnq88fk-PYzT71/exec'; // 実際のURLに置き換えてください
@@ -304,7 +319,6 @@ fetch(jsonUrl)
   .catch(error => {
     console.error('Error fetching JSON data:', error);
   });
-
 
       }
     }
