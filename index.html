@@ -61,7 +61,7 @@ button.btn {
 <body>
   <style>
 #popup-wrapper {
-  background-color: rgba(0, 0, 0, .5);
+  background-color: black;
   position: fixed;
   top: 0;
   left: 0;
@@ -101,7 +101,7 @@ button.btn {
         <div style="background-color: red; margin-top: 40px;">
         <h2 style="white">情報/INFOMATION</h2>
         </div>
-        <p id="info_coment"></p>
+        <p id="info_coment"style="font-size:30px;"></p>
       </div>
     </div>
   </div>
@@ -589,7 +589,9 @@ button.btn {
                 const close = document.getElementById('close');
 
                 popupWrapper.style.display = "block";
-                document.getElementById('info_coment').innerHTML = "列車番号に誤りがありました。\n列番："+ car_num + "\nErrorNumber:E0001"
+                document.getElementById('info_coment').innerHTML = "列車番号に誤りがありました。\n"
+                + "列番：" + car_num 
+                + "\n" + "ErrorNumber:E0001"
 
                 // ポップアップの外側又は「x」のマークをクリックしたときポップアップを閉じる
                 popupWrapper.addEventListener('click', e => {
