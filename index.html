@@ -59,6 +59,11 @@ button.btn {
   </style>
 </head>
 <body>
+  <div style="display: none;">
+    <audio id="erorr_num_audio">
+      <source src="./audio/error_num.mp3" type="audio/mp3">
+    </audio>
+  </div>
   <div id="second_content">
   <div id="font_2">
     <div style="display: flex; justify-content: right;">
@@ -536,6 +541,8 @@ button.btn {
                 break; // 一致するものが見つかったらループを終了
              }else if(i+1 === data.length){
                 console.log("列番の間違えあり")
+                document.getElementById('error_num_audio').currentTime = 0; //連続クリックに対応
+                document.getElementById('error_num_audio').play(); //クリックしたら音を再生
              }
           }
           })
