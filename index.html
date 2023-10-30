@@ -522,7 +522,7 @@ button.btn {
         stop_sta_num = parseInt(car_sta_s) + parseInt(d)-1;
       console.log(car_sta_s)
       console.log(car_sta_f)
-        document.getElementById("sta_name" + (stop_sta_num+1)).textContent = stop_station;
+        document.getElementById("sta_name" + stop_sta_num).textContent = stop_station;
         stop_station = stations[stop_sta_num];
         console.log('停車駅：' + stop_station);
         console.log('回数：' + d);
