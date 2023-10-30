@@ -73,6 +73,7 @@ button.btn {
           <th>駅名</th>
           <th>着時刻</th>
           <th>発時刻</th>
+          <th>発着番線</th>
         </tr>
       </thead>
       <tbody id="tbody_1">
@@ -80,76 +81,91 @@ button.btn {
           <td id="sta_name1"></td>
           <td id="sta_a1"></td>
           <td id="sta_d1"></td>
+          <td id="sta_track1"></td>
         </tr>
         <tr>
           <td id="sta_name2"></td>
           <td id="sta_a2"></td>
           <td id="sta_d2"></td>
+          <td id="sta_track2"></td>
         </tr>
         <tr>
           <td id="sta_name3"></td>
           <td id="sta_a3"></td>
           <td id="sta_d3"></td>
+          <td id="sta_track3"></td>
         </tr>
         <tr>
           <td id="sta_name4"></td>
           <td id="sta_a4"></td>
           <td id="sta_d4"></td>
+          <td id="sta_track4"></td>
         </tr>
         <tr>
           <td id="sta_name5"></td>
           <td id="sta_a5"></td>
           <td id="sta_d5"></td>
+          <td id="sta_track5"></td>
         </tr>
         <tr>
           <td id="sta_name6"></td>
           <td id="sta_a6"></td>
           <td id="sta_d6"></td>
+          <td id="sta_track6"></td>
         </tr>
         <tr>
           <td id="sta_name7"></td>
           <td id="sta_a7"></td>
           <td id="sta_d7"></td>
+          <td id="sta_track7"></td>
         </tr>
         <tr>
           <td id="sta_name8"></td>
           <td id="sta_a8"></td>
           <td id="sta_d8"></td>
+          <td id="sta_track8"></td>
         </tr>
         <tr>
           <td id="sta_name9"></td>
           <td id="sta_a9"></td>
           <td id="sta_d9"></td>
+          <td id="sta_track9"></td>
         </tr>
         <tr>
           <td id="sta_name10"></td>
           <td id="sta_a10"></td>
           <td id="sta_d10"></td>
+          <td id="sta_track10"></td>
         </tr>
         <tr>
           <td id="sta_name11"></td>
           <td id="sta_a11"></td>
           <td id="sta_d11"></td>
+          <td id="sta_track11"></td>
         </tr>
         <tr>
           <td id="sta_name12"></td>
           <td id="sta_a12"></td>
           <td id="sta_d12"></td>
+          <td id="sta_track12"></td>
         </tr>
         <tr>
           <td id="sta_name13"></td>
           <td id="sta_a13"></td>
           <td id="sta_d13"></td>
+          <td id="sta_track13"></td>
         </tr>
         <tr>
           <td id="sta_name14"></td>
           <td id="sta_a14"></td>
           <td id="sta_d14"></td>
+          <td id="sta_track14"></td>
         </tr>
         <tr>
           <td id="sta_name15"></td>
           <td id="sta_a15"></td>
           <td id="sta_d15"></td>
+          <td id="sta_track15"></td>
         </tr>
       </tbody>
     </table>
@@ -524,6 +540,45 @@ button.btn {
       console.log(car_sta_f)
         stop_station = stations[stop_sta_num];
         document.getElementById("sta_name" + (stop_sta_num+1)).textContent = stop_station;
+        if(stop_sta_num+1 === 1){
+          if(car_time_s_m === "1"||car_time_s_m === "3"){
+            if(car_time_s_m === "1"){
+              document.getElementById("sta_track" + (stop_sta_num+1)).textContent = "4";
+            }else{
+              document.getElementById("sta_track" + (stop_sta_num+1)).textContent = "3";
+            }
+          }else if(car_time_s_m === 2||car_time_s_m === 6){
+            if(car_time_s_m === "2"){
+              document.getElementById("sta_track" + (stop_sta_num+1)).textContent = "2";
+            }else{
+              document.getElementById("sta_track" + (stop_sta_num+1)).textContent = "1";
+            }
+          }
+        }else if(stop_sta_num+1 === 2||stop_sta_num+1 === 9||stop_sta_num+1 === 11){
+          if(car_time_s_m === "4"){
+              document.getElementById("sta_track" + (stop_sta_num+1)).textContent = "1";
+            }else{
+              document.getElementById("sta_track" + (stop_sta_num+1)).textContent = "2";
+            }
+        }else if(stop_sta_num+1 >= 3 && stop_sta_num+1 <=8){
+        document.getElementById("sta_track" + (stop_sta_num+1)).textContent = "1";
+        }else if(stop_sta_num+1 === 9||stop_sta_num+1 === 11||stop_sta_num+1 === 14){
+        document.getElementById("sta_track" + (stop_sta_num+1)).textContent = "1";
+        }else if(stop_sta_num+1 === 15){
+          if(car_time_s_m === "1"){
+              document.getElementById("sta_track" + (stop_sta_num+1)).textContent = "1";
+            }else if(car_time_s_m === "2"){
+              document.getElementById("sta_track" + (stop_sta_num+1)).textContent = "3";
+            }else if(car_time_s_m === "3"){
+              document.getElementById("sta_track" + (stop_sta_num+1)).textContent = "4";
+            }else if(car_time_s_m === "4"){
+              document.getElementById("sta_track" + (stop_sta_num+1)).textContent = "8";
+            }else if(car_time_s_m === "5"){
+              document.getElementById("sta_track" + (stop_sta_num+1)).textContent = "5";
+            }
+        }if(stop_sta_num+1 >= 9 && car_time_s_m === "6"){
+              document.getElementById("sta_track" + (stop_sta_num+1)).textContent = "番線未定";
+        }
         console.log('停車駅：' + stop_station);
         console.log('回数：' + d);
       }
