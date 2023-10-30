@@ -476,6 +476,14 @@ button.btn {
                   if(time_a_d === 1){
                     sta_a[sta_a_or_d] = sta_a[time_a_d]
                     document.getElementById(table_sta_element_s).textContent = sta_a[sta_a_or_d]
+              var jstDate_2 = new Date(new Date(sta_d[time_a_d]).getTime() + (9 * 60 * 60 * 1000));
+
+              // 時刻部分を取得
+              var hours_2 = jstDate_2.getUTCHours();
+              var minutes_2 = jstDate_2.getUTCMinutes();
+              var seconds_2 = jstDate_2.getUTCSeconds();
+              sta_d[sta_a_or_d] = hours_2.toString().padStart(2, '0') + ':' + minutes_2.toString().padStart(2, '0') + ':' + seconds_2.toString().padStart(2, '0');
+                    document.getElementById(table_sta_element_d).textContent = sta_d[sta_a_or_d]
                   }else{
               var jstDate_2 = new Date(new Date(sta_d[time_a_d]).getTime() + (9 * 60 * 60 * 1000));
 
