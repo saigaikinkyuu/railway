@@ -534,7 +534,9 @@ button.btn {
               //
           }
                 break; // 一致するものが見つかったらループを終了
-            }
+             }else if(i+1 === data.length){
+                console.log("列番の間違えあり")
+             }
           }
           })
           .catch(error => {
