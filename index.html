@@ -59,64 +59,79 @@ button.btn {
   </style>
 </head>
 <body>
-<style>
-.popup {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  <style>
+    #click-btn {
+  display: block;
+  margin: 20px auto;
+  background-color: purple;
+  color: white;
+  border: 0;
+  padding: 6px 10px;
 }
-.popup .popuptext {
-    visibility: hidden;
-    width: 160px;
-    background-color: #ff0000;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 8px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -80px;
+
+#popup-wrapper {
+  background-color: rgba(0, 0, 0, .5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
 }
-.popup .popuptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
+
+#popup-inside {
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+  background: white;
+  margin: 10% auto;
+  padding: 20px;
+  position: relative;
 }
-.popup .show {
-    visibility: visible;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s;
+
+#message a {
+  background: purple;
+  color: white;
+  text-decoration: none;
+  padding: 6px 10px;
 }
-@-webkit-keyframes fadeIn {
-    from {opacity: 0;} 
-    to {opacity: 1;}
+
+#close {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  cursor: pointer;
 }
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity:1 ;}
-}
-</style>
-<h2>CSSを使ったポップアップ</h2>
-<div class="popup" onclick="myFunction()">ここをクリックしてみて下さい！
-  <span class="popuptext" id="myPopup">PopUp!!!</span>
-</div>
-<script>
-function myFunction() {
-    var popup = document.getElementById("myPopup");
-    popup.classList.toggle("show");
-}
-</script>
+
+  </style>
+  <button id="click-btn">クリック！</button>
+  <div id="popup-wrapper">
+    <div id="popup-inside">
+      <div id="close">x</div>
+      <div id="message">
+        <h2>あの人気のマンガが...</h2>
+        <p>今なら80%オフ！</p>
+        <a href="#">ゲットする</a>
+      </div>
+    </div>
+  </div>
+  <script>
+    const clickBtn = document.getElementById('click-btn');
+    const popupWrapper = document.getElementById('popup-wrapper');
+    const close = document.getElementById('close');
+
+    // ボタンをクリックしたときにポップアップを表示させる
+    clickBtn.addEventListener('click', () => {
+      popupWrapper.style.display = "block";
+    });
+
+    // ポップアップの外側又は「x」のマークをクリックしたときポップアップを閉じる
+    popupWrapper.addEventListener('click', e => {
+      if (e.target.id === popupWrapper.id || e.target.id === close.id) {
+        popupWrapper.style.display = 'none';
+      }
+    });
+  </script>
   <div id="second_content">
   <div id="font_2">
     <div style="display: flex; justify-content: right;">
