@@ -290,8 +290,16 @@ button.btn {
         car4.innerHTML = "";
         car5.innerHTML = "";
         car6.innerHTML = "";
-        while (document.getElementById("tbody_1").firstChild) {
-          document.getElementById("tbody_1").removeChild(document.getElementById("tbody_1").firstChild);
+        for(var remove_table = 1;remove_table < 16;remove_table++){
+          var remove_table1 = "sta_name" + remove_table;
+          var remove_table2 = "sta_a" + remove_table;
+          var remove_table3 = "sta_d" + remove_table;
+          var remove_table4 = "sta_track" + remove_table;
+          document.getElementById(remove_table1).innerHTML = "";
+          document.getElementById(remove_table2).innerHTML = "";
+          document.getElementById(remove_table3).innerHTML = "";
+          document.getElementById(remove_table4).innerHTML = "";
+        }
         }
         first_content.style.display ="block";
           second_content.style.display ="none";
