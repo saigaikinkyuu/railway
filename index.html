@@ -60,15 +60,6 @@ button.btn {
 </head>
 <body>
   <style>
-    #click-btn {
-  display: block;
-  margin: 20px auto;
-  background-color: purple;
-  color: white;
-  border: 0;
-  padding: 6px 10px;
-}
-
 #popup-wrapper {
   background-color: rgba(0, 0, 0, .5);
   position: fixed;
@@ -84,7 +75,6 @@ button.btn {
   width: 100%;
   max-width: 300px;
   background: white;
-  margin: 10% auto;
   padding: 20px;
   position: relative;
 }
@@ -105,7 +95,7 @@ button.btn {
 
   </style>
   <div id="popup-wrapper" style="z-index:10000">
-    <div id="popup-inside" style="width:50%; height:30%;">
+    <div id="popup-inside" style="max-width:97%; height:95%;color:white;">
       <div id="close">x</div>
       <div id="message">
         <div style="background-color: red;">
