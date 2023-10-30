@@ -104,33 +104,18 @@ button.btn {
 }
 
   </style>
-  <button id="click-btn">クリック！</button>
-  <div id="popup-wrapper">
-    <div id="popup-inside">
+  <div id="popup-wrapper" style="z-index:10000">
+    <div id="popup-inside" style="width:50%; height:30%;">
       <div id="close">x</div>
       <div id="message">
-        <h2>あの人気のマンガが...</h2>
-        <p>今なら80%オフ！</p>
-        <a href="#">ゲットする</a>
+        <div style="background-color: red;">
+        <h2 style="white">情報/INFOMATION</h2>
+        </div>
+        <p id="info_coment"></p>
       </div>
     </div>
   </div>
   <script>
-    const clickBtn = document.getElementById('click-btn');
-    const popupWrapper = document.getElementById('popup-wrapper');
-    const close = document.getElementById('close');
-
-    // ボタンをクリックしたときにポップアップを表示させる
-    clickBtn.addEventListener('click', () => {
-      popupWrapper.style.display = "block";
-    });
-
-    // ポップアップの外側又は「x」のマークをクリックしたときポップアップを閉じる
-    popupWrapper.addEventListener('click', e => {
-      if (e.target.id === popupWrapper.id || e.target.id === close.id) {
-        popupWrapper.style.display = 'none';
-      }
-    });
   </script>
   <div id="second_content">
   <div id="font_2">
@@ -609,6 +594,19 @@ button.btn {
                 break; // 一致するものが見つかったらループを終了
              }else if(i+1 === data.length){
                 console.log("列番の間違えあり")
+                const clickBtn = document.getElementById('click-btn');
+                const popupWrapper = document.getElementById('popup-wrapper');
+                const close = document.getElementById('close');
+
+                popupWrapper.style.display = "block";
+                document.getElementById('info_coment').innerHTML = "列車番号に誤りがありました。\n列番："+ car_num + "\nErrorNumber:E0001"
+
+                // ポップアップの外側又は「x」のマークをクリックしたときポップアップを閉じる
+                popupWrapper.addEventListener('click', e => {
+                  if (e.target.id === popupWrapper.id || e.target.id === close.id) {
+                    popupWrapper.style.display = 'none';
+                  }
+                });
                 const error_num_audio = new Audio('./audio/erorr_num.mp3');
                 error_num_audio.currentTime = 0;
                 error_num_audio.play();
