@@ -445,7 +445,7 @@ button.btn {
                     var table_sta_element_d = document.getElementById("sta_d" + sta_a_or_d);
                   if(time_a_d > 8){
                     sta_a[sta_a_or_d] = sta_a[time_a_d]
-                    table_sta_element_s.textContent = sta_a[sta_a_or_d]
+                    table_sta_element_s.innerHTML = sta_a[sta_a_or_d]
                   }else{
               var jstDate_2 = new Date(new Date(sta_d[time_a_d]).getTime() + (9 * 60 * 60 * 1000));
 
@@ -454,7 +454,7 @@ button.btn {
               var minutes_2 = jstDate_2.getUTCMinutes();
               var seconds_2 = jstDate_2.getUTCSeconds();
               sta_d[sta_a_or_d] = hours_2.toString().padStart(2, '0') + ':' + minutes_2.toString().padStart(2, '0') + ':' + seconds_2.toString().padStart(2, '0');
-                    table_sta_element_d.textContent = sta_d[sta_a_or_d]
+                    table_sta_element_d.innerHTML = sta_d[sta_a_or_d]
               var jstDate_1 = new Date(new Date(sta_a[time_a_d]).getTime() + (9 * 60 * 60 * 1000));
 
               // 時刻部分を取得
@@ -462,10 +462,10 @@ button.btn {
               var minutes_1 = jstDate_1.getUTCMinutes();
               var seconds_1 = jstDate_1.getUTCSeconds();
               sta_a[sta_a_or_d] = hours_1.toString().padStart(2, '0') + ':' + minutes_1.toString().padStart(2, '0') + ':' + seconds_1.toString().padStart(2, '0');
-                    table_sta_element_s.textContent = sta_a[sta_a_or_d]
+                    table_sta_element_s.innerHTML = sta_a[sta_a_or_d]
                   }if(time_a_d > 7){
                     sta_d[sta_a_or_d] = sta_d[time_a_d]
-                    table_sta_element_d.textContent = sta_d[sta_a_or_d]
+                    table_sta_element_d.innerHTML = sta_d[sta_a_or_d]
                   }
                 }else if(car_sta_f_num === "6"){
               console.log('Car found:');
@@ -473,7 +473,7 @@ button.btn {
                     var table_sta_element_d = document.getElementById("sta_d" + sta_a_or_d);
                   if(time_a_d === 1){
                     sta_a[sta_a_or_d] = sta_a[time_a_d]
-                    table_sta_element_s.textContent = sta_a[sta_a_or_d]
+                    table_sta_element_s.innerHTML = sta_a[sta_a_or_d]
                   }else{
               var jstDate_2 = new Date(new Date(sta_d[time_a_d]).getTime() + (9 * 60 * 60 * 1000));
 
@@ -482,7 +482,7 @@ button.btn {
               var minutes_2 = jstDate_2.getUTCMinutes();
               var seconds_2 = jstDate_2.getUTCSeconds();
               sta_d[sta_a_or_d] = hours_2.toString().padStart(2, '0') + ':' + minutes_2.toString().padStart(2, '0') + ':' + seconds_2.toString().padStart(2, '0');
-                    table_sta_element_d.textContent = sta_d[sta_a_or_d]
+                    table_sta_element_d.innerHTML = sta_d[sta_a_or_d]
               var jstDate_1 = new Date(new Date(sta_a[time_a_d]).getTime() + (9 * 60 * 60 * 1000));
 
               // 時刻部分を取得
@@ -490,10 +490,10 @@ button.btn {
               var minutes_1 = jstDate_1.getUTCMinutes();
               var seconds_1 = jstDate_1.getUTCSeconds();
               sta_a[sta_a_or_d] = hours_1.toString().padStart(2, '0') + ':' + minutes_1.toString().padStart(2, '0') + ':' + seconds_1.toString().padStart(2, '0');
-                    table_sta_element_s.textContent = sta_a[sta_a_or_d]
+                    table_sta_element_s.innerHTML = sta_a[sta_a_or_d]
                   }if(time_a_d === 15){
                     sta_d[sta_a_or_d] = sta_d[time_a_d]
-                    table_sta_element_d.textContent = sta_d[sta_a_or_d]
+                    table_sta_element_d.innerHTML = sta_d[sta_a_or_d]
                   }
                 }
               // フォーマットされた時刻を作成
